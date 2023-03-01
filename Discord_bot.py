@@ -15,7 +15,8 @@ class MyClient(discord.Client):
         if message.content.startswith('$hello'):
             await message.channel.send('Hello World!')
 
-#Intents is a thing.
+#Intents is a new thinggy.
+
 a = 4
 print(a)
 
