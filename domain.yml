@@ -8,6 +8,7 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - name
 
 responses:
   utter_greet:
@@ -28,6 +29,9 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_name:
+    - text: "My name is JockoBot. I focus on project management"
 
 session_config:
   session_expiration_time: 60
