@@ -1,8 +1,10 @@
-TOKEN = 'MTA3MTc4NzE0ODQxNzcxMjIwOQ.GfjoZ7.5xerRLMbKuNgJjo_BmDCVZg1IY_O8jtBqiAF1E'
-GUILD = "TheGreatBuddo's server"
 
 import discord
+import os
+from dotenv import load_dotenv
 
+# Credentials
+load_dotenv('.env')
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -20,4 +22,4 @@ intents.message_content = True
 
 client = MyClient(intents=intents)
 
-client.run(TOKEN)
+client.run(os.getenv('TOKEN'))
