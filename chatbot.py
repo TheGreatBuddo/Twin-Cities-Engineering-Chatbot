@@ -52,5 +52,17 @@ tree = app_commands.CommandTree(client)
 async def self(interaction: discord.Interaction):
     await interaction.response.send_message(f"Pong")
 
+@tree.command(name="goal", description="User defined goal", guild=discord.Object(id=806384251539947530))
+async def self(interaction: discord.Interaction):
+    #allow user to type a goal
+    #store the goal into the firebase db
+    #say goal was successfully stored
+    # inform the user the bot will check in with them for their status
+
+    #To_do list
+    #Allow user to type deadline
+    #allow bot to remind user in response to deadline
+    #allow user to retype deadline after answering a storyline prompt through rasa explaining the ins and outs.
+
 
 client.run(token)
