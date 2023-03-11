@@ -27,7 +27,8 @@ responses:
   - text: "Bye"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I am a project management bot designed to help complete your project and personal tasks."
+
 
 session_config:
   session_expiration_time: 60
