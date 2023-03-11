@@ -4,8 +4,13 @@ import discord
 from discord import app_commands
 import interactions
 from dotenv import load_dotenv
-
 from rasa_connection import curl_request
+import firebase_admin
+from firebase_admin import credentials
+
+cred = credentials.Certificate("path/to/serviceAccountKey.json")
+firebase_admin.initialize_app(cred)
+
 
 # Load Discord Bot Token
 load_dotenv()
