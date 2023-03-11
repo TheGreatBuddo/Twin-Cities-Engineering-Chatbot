@@ -17,8 +17,15 @@ intents.message_content = True
 
 
 class MyClient(discord.Client):
+
+    def __init__(self):
+        super().__init__(intents=intents)
+        self.synced = False
+
     async def on_ready(self):
-        print(f'Logged on as {self.user}!')
+        await tree.sync(guild=discord.Object(id=806384251539947530))
+        self.synced = True
+        print("Bot is Online")
 
     async def on_message(self, message):
         if message.author != self.user:
@@ -32,6 +39,12 @@ class MyClient(discord.Client):
             return await message.channel.send(f'{message.author.mention} ' + end_response)
 
 
-client = MyClient(intents=intents)
+client = MyClient()
+tree = app_commands.CommandTree(client)
+
+#Ping Pong slash command
+@tree.command(name="ping", description="Pings the user", guild=discord.Object(id=806384251539947530))
+async def self(interaction: discord.Interaction):
+    await interaction.response.send_message(f"Pong")
 
 client.run(token)
