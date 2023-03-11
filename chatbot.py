@@ -1,9 +1,11 @@
-import discord
-import requests
 import os
 
-from rasa_connection import curl_request
+import discord
+from discord import app_commands
+import interactions
 from dotenv import load_dotenv
+
+from rasa_connection import curl_request
 
 # Load Discord Bot Token
 load_dotenv()
@@ -23,7 +25,7 @@ class MyClient(discord.Client):
             # Use curl_request Function (located in rasa_connection.py)
             answers = curl_request(message.content, str(message.author))
 
-            # Insert all Respons into one String so we can return it into the Discord Channel
+            # Insert all Response into one String, so we can return it into the Discord Channel
             end_response = " \n ".join((answers))
 
             # Return the message in a Discord Channel
@@ -31,4 +33,5 @@ class MyClient(discord.Client):
 
 
 client = MyClient(intents=intents)
+
 client.run(token)
