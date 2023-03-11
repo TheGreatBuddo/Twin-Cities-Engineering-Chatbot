@@ -1,20 +1,19 @@
 import os
 
 import discord
-from discord import app_commands
-import interactions
-from dotenv import load_dotenv
-from rasa_connection import curl_request
 import firebase_admin
+from discord import app_commands
+from dotenv import load_dotenv
 from firebase_admin import credentials
+from firebase_admin import db
 
-cred = credentials.Certificate("path/to/serviceAccountKey.json")
-firebase_admin.initialize_app(cred)
+from rasa_connection import curl_request
 
-
-# Load Discord Bot Token
+# Load Discord Bot Token and Firebase key
 load_dotenv()
 token = os.getenv('TOKEN')
+cred = credentials.Certificate('firebasekey.json')
+databaseApp = firebase_admin.initialize_app(cred, os.getenv('firebaseurl'))
 
 # Set Discord default intents required for class definition
 intents = discord.Intents.default()
@@ -47,9 +46,11 @@ class MyClient(discord.Client):
 client = MyClient()
 tree = app_commands.CommandTree(client)
 
-#Ping Pong slash command
+
+# Ping Pong slash command
 @tree.command(name="ping", description="Pings the user", guild=discord.Object(id=806384251539947530))
 async def self(interaction: discord.Interaction):
     await interaction.response.send_message(f"Pong")
+
 
 client.run(token)
