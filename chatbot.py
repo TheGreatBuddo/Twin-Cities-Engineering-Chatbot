@@ -13,11 +13,13 @@ from rasa_connection import curl_request
 load_dotenv()
 token = os.getenv('TOKEN')
 cred = credentials.Certificate('firebasekey.json')
-databaseApp = firebase_admin.initialize_app(cred, os.getenv('firebaseurl'))
+firebaseurl = {'databaseURL': os.getenv('firebaseurl')}
+databaseApp = firebase_admin.initialize_app(cred, firebaseurl)
 
 # Set Discord default intents required for class definition
 intents = discord.Intents.default()
 intents.message_content = True
+discord_guild_id = 806384251539947530
 
 
 class MyClient(discord.Client):
@@ -27,7 +29,7 @@ class MyClient(discord.Client):
         self.synced = False
 
     async def on_ready(self):
-        await tree.sync(guild=discord.Object(id=806384251539947530))
+        await tree.sync(guild=discord.Object(id=discord_guild_id))
         self.synced = True
         print("Bot is Online")
 
@@ -48,21 +50,41 @@ tree = app_commands.CommandTree(client)
 
 
 # Ping Pong slash command
-@tree.command(name="ping", description="Pings the user", guild=discord.Object(id=806384251539947530))
+@tree.command(name="ping", description="Pings the user", guild=discord.Object(id=discord_guild_id))
 async def self(interaction: discord.Interaction):
     await interaction.response.send_message(f"Pong")
 
-@tree.command(name="goal", description="User defined goal", guild=discord.Object(id=806384251539947530))
-async def self(interaction: discord.Interaction):
-    #allow user to type a goal
-    #store the goal into the firebase db
-    #say goal was successfully stored
-    # inform the user the bot will check in with them for their status
 
-    #To_do list
-    #Allow user to type deadline
-    #allow bot to remind user in response to deadline
-    #allow user to retype deadline after answering a storyline prompt through rasa explaining the ins and outs.
+@tree.command(name="goal", description="User defined goal", guild=discord.Object(id=discord_guild_id))
+async def self(interaction: discord.Interaction, goal: str):
+    user = interaction.user.name
+    # refer beginning at start of firebase db at forward slash (/)
+    ref = db.reference(f"/")
+    # Update the database with user defined goal
+    ref.push({
+        user: {"Goal": goal}
+    })
+    await interaction.response.send_message(f"Your goal \"{goal}\" has been stored in firebase ")
+
+# inform the user the bot will check in with them for their status
+# Allow user to check off the goal
+
+# To_do list
+# Allow user to type deadline
+# allow bot to remind user in response to deadline
+# allow user to retype deadline after answering a storyline prompt through rasa explaining the ins and outs.
+
+@tree.command(name="complete", description="User to erase a goal", guild=discord.Object(id=discord_guild_id))
+async def self(interaction: discord.Interaction):
+    user = interaction.user.name
+    # refer beginning at start of firebase db at forward slash (/)
+    ref = db.reference(f"/{user}/Goal")
+    #Fetch goal from database
+    goal = ref.get()
+
+    # Update the database with user defined goal
+    #ref.child(goal).delete()
+    #await interaction.response.send_message(f"Your goal \"{goal}\" has been stored in firebase ")
 
 
 client.run(token)
