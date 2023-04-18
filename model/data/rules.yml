@@ -11,3 +11,94 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: State all known facts about seminar retrospective of the semester
+  steps:
+  - intent: seminar_retrospective
+  - action: utter_retrospective
+
+- rule: Describe the Professional Development Plan (PDP)
+  steps:
+  - intent: PDP
+  - action: utter_PDP
+
+- rule: Describe the Best Works Portfolio (BWI)
+  steps:
+  - intent: BWI
+  - action: utter_BWI
+
+- rule: Explain best BWI practice and good examples
+  steps:
+  - intent: BWI_examples
+  - action: utter_BWI_examples
+
+- rule: Describe the reflection journal
+  steps:
+  - intent: reflection_journal
+  - action: utter_reflection_journal
+
+- rule: Describe what a Deep Learning Activity (DLA) is
+  steps:
+  - intent: DLA
+  - action: utter_DLA
+
+- rule: Describe what seminar is
+  steps:
+  - intent: seminar
+  - action: utter_seminar
+
+- rule: Describe what the volunteer log is
+  steps:
+  - intent: volunteer
+  - action: utter_volunteer
+
+- rule: Describe what the jobs package is
+  steps:
+  - intent: jobs_package
+  - action: utter_jobs_package
+
+- rule: Describe what the technical presentation is
+  steps:
+  - intent: technical_presentation
+  - action: utter_technical_presentation
+
+- rule: Describe what the yellow sheets are
+  steps:
+  - intent: yellow_sheets
+  - action: utter_yellow_sheets
+
+- rule: Describe what the Final Design Document (FDD) is
+  steps:
+  - intent: FDD
+  - action: utter_FDD
+
+- rule: Describe what the team contract is
+  steps:
+  - intent: team_contract
+  - action: utter_team_contract
+
+- rule: Describe what the deliverables and specs is
+  steps:
+  - intent: deliverables_specs
+  - action: utter_deliverables_specs
+
+- rule: Describe what the SOW is
+  steps:
+  - intent: SOW
+  - action: utter_SOW
+
+- rule: Describe what the background presentation is
+  steps:
+  - intent: background_presentation
+  - action: utter_background_presentation
+
+- rule: Describe what the poster presentation is
+  steps:
+  - intent: poster_presentation
+  - action: utter_poster_presentation
+  - action: utter_better_poster
+
+- rule: Describe what the client presentation is
+  steps:
+  - intent: client_presentation
+  - action: utter_client_presentation

@@ -1,12 +1,30 @@
 version: '2.0'
 intents:
+- BWI
+- BWI_examples
+- DLA
+- FDD
+- PDP
+- SOW
 - affirm
+- background_presentation
 - bot_challenge
+- client_presentation
+- deliverables_specs
 - deny
 - goodbye
 - greet
+- jobs_package
 - mood_great
 - mood_unhappy
+- poster_presentation
+- reflection_journal
+- seminar
+- seminar_retrospective
+- team_contract
+- technical_presentation
+- volunteer
+- yellow_sheets
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -21,6 +39,44 @@ responses:
   - text: See yah later!
   utter_iamabot:
   - text: I am a project management bot designed to help complete your project and personal tasks.
+  utter_retrospective:
+  - text: The Seminar Retrospective is a comprehensive presentation where students showcase their professional, technical, design, project management, and learning abilities. It is presented to an audience of knowledgeable technical individuals who may not be familiar with the specific technical content being discussed. The presentation includes sections on introducing oneself, discussing professional strengths and weaknesses with evidence and plans for improvement, presenting a technical topic studied with examples, describing project management successes and failures with lessons learned, and defining a personal theoretical framework for learning with contextualized examples. Additionally, the presentation outlines the student's plan for acquiring future technical knowledge as an engineer. It is a reflective and informative presentation that highlights the student's achievements and areas for growth after completing their studies.
+  utter_PDP:
+  - text: The PDP is a document wherein you identify your broad goals and provide specific actionable steps that will move you toward achieving those goals. The PDP will be an ongoing document for your entire time at TCE and potentially into the future. PDPs will be reviewed by project mentors who may provide advice and support. In addition to the primary PDP submission there are two opportunities to submit updates that indicate any progress or changes
+  utter_BWI:
+  - text: Each week, submit your best work with evidence and explanations for one or two indicators (total of 16 indicators) into D2L. Make a binder with your best works that represent a quarter of the indicators times the number of semesters you've been in the program by the end of the semester. By the end of your first semester in seminar, have at least 12 unique indicators completed. By the end of your second semester, have at least 24 unique indicators completed. By the end of your third semester, have at least 36 unique indicators completed. From your fourth semester onwards, complete all 49 unique indicators. Your final grade will be based on the average grade of your submitted indicators and how many unique indicators you completed for your stage.
+  utter_BWI_examples:
+  - text: High BWI scores are rewarded with good explanations that meet the indicator. Restating words in the indicator alongside your evidence is a good approach to achieving better BWI scores.
+  utter_reflection_journal:
+  - text: A package (typically Microsoft word) of three reflection journal entries must be submitted most weeks. The document must contain one full reflection and two lite reflections. Each journal is submitted in D2L. Each reflection must include four sections 1) Describe the learning activity 2) Identify the take-away knowledge 3) Explain how the knowledge will be used in your future as a student or practicing engineer and 4) Identify further learning or state questions that addressing will make the learning from this experience more impactful (these should not be introspective).
+  utter_DLA:
+  - text: A Deep Learning Activity (DLA) is an assignment associated with most every class in TCE. There are four types of DLAs possible. Project DLA, Experiment or Model DLA, Engineering Design DLA, or Technical Essay DLA. A Project DLA can reduce your workload because you can complete the DLA with content taken from your design project Final Design Document (FDD). Experiment or Model requires you to conduct an experiment or use computer simulation to model physical phenomena. Engineering Design DLA requires you to design a part or process. Technical essay DLA requires you to write an essay related to the course’s content. Often the most common DLAs are Project or Experimental / Modeling. Refer to the numerous examples provided by the TCE body, as well as find the DLA book hidden on the shelves of P2805.
+  utter_seminar:
+  - text: Seminar is a place where we get to experience workshop-style learning opportunities led by TCE faculty or outside experts. Seminar teaches us about professional engineering behavior, being respectful, and ethical decision making. Attendance and participation are required and as professionals, we are expected to be present and on time. Seminar typically is associated with a common read so be prepared to read a book throughout the semester and discuss.
+  utter_volunteer:
+  - text: TCE students are expected to serve the community at least 15 hours per semester. One way is to provide support and documentation on a piece of program equipment that you are an expert in. Other ways could be to participate in outreach events or volunteer for a nonprofit organization. These should be documented and provided to faculty. Keep a log and submit it to the appropriate D2L drop box. If you are not sure whether an activity qualifies, please check before you include it in your tracking.
+  utter_jobs_package:
+  - text: The Jobs Package is a chance to develop your resume and cover letter with feedback from external sources such as the TCE’s Industry Advisory Board. You will complete a mock interview to sharpen your interviewing skills and get over any fear you have related to the job application process.
+  utter_technical_presentation:
+  - text: The Technical Presentation is your project team’s chance to present to the TCE student body everything your project team physically did within the semester.  Exploring other students’ previous semester technical presentations is helpful to get an idea of the expected outline and content.
+  utter_yellow_sheets:
+  - text: Yellow Sheets are an opportunity for the project’s team leader and all team members to practice evaluating and being evaluated by peers. Your team leader or a faculty member (if you are the team leader) will conduct a performance review with you regarding your abilities to meet the professional expectations of a TCE student and to maintain a positive working environment. Team leads will discuss the reviews they conducted with a faculty member. Yellow sheets correlate to a manager evaluating you for a promotion. This is a huge growth opportunity to view your own strengths and weaknesses as either a leader or a team member.
+  utter_FDD:
+  - text: The Final Design Documentation will report all the content of what your project team accomplished within the semester. The final design documentation will consist of client documentation and program documentation. Program documentation will be negotiated with each team depending on client documentation. In total the design documentation must meet the Minnesota State University, Mankato writing intensive requirement for pages with instructor feedback. This means (10 pages per person) in your project team. Start writing your FDD now!
+  utter_team_contract:
+  - text: The team contract is a contract for you and your project team members to sign and submit to Jake. The contract will hold you to certain responsibilities associated with the role you take in your project team. Typically, a template is handed down from the TCE body or a template can be found in D2L design archives.
+  utter_deliverables_specs:
+  - text: The deliverables and specs draft is a draft document for your project team to state explicitly the end results of your project. Be specific about deliverables. State the deliverables and the quality and quantity of the deliverable’s specifications. In practical engineering we are upheld by the contract we send to clients stating what we have done at what time and date. Use Gantt charts and other timeline tools to scope out your project to recognize actionable deliverables accomplishable by the end of the semester.
+  utter_SOW:
+  - text: The scope of work is an agreement between your team, your client sponsor, and TCE. It must be detailed enough to feel like a “contract.” All details of the contract must be agreed upon in writing and the document must be signed to indicate this agreement. This is the more refined and official version of the Deliverables and Specs Draft. The scope of work is also a living document capable of being changed if communicated between your client and design professor.
+  utter_background_presentation:
+  - text: The background presentation is about presenting to the TCE student body all the previous work that has been accomplished related to your project. Using background information is critical to project development as starting from somewhere can reduce workload greatly. Typically, someone, somewhere has already done the thing you want to do!
+  utter_poster_presentation:
+  - text: Create a poster to inform the audience of the technical content of your project. Posters are best made in PowerPoint and asked to be 48” by 36” for actual printing and display in the hallways of Normandale or St. Paul Campus. This resource will help you create a great poster!
+  utter_better_poster:
+  - text: https://www.youtube.com/watch?v=SYk29tnxASs&t=792s
+  utter_client_presentation:
+  - text: Final presentations are for your project’s client. Give your client a final presentation rubric and have them fill out the rubric in response to your presentation. Typically, using content from the technical poster or technical presentation will reduce any workload.
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

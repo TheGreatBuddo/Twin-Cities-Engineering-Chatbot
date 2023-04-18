@@ -29,7 +29,4 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: interactive_story_1
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+

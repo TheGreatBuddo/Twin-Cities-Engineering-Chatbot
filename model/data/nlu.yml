@@ -84,3 +84,107 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
     - Hey, who are you?
+- intent: seminar_retrospective
+  examples: |
+    - what is the due date for the seminar retrospective?
+    - what is the seminar retrospective?
+    - what do you do for the seminar retrospective?
+    - seminar retrospective
+- intent: PDP
+  examples: |
+    - what is PDP?
+    - PDP?
+    - Professional Development Plan?
+    - what is the professional development plan?
+- intent: BWI
+  examples: |
+    - BWI
+    - Best Work Indicator
+    - Best work portfolio
+    - best works
+- intent: BWI_examples
+  examples: |
+    - what are some examples of a BWI?
+    - BWI examples?
+    - BWI example
+    - what is a best works indicator example?
+    - what is an example of a best work indicator?
+- intent: reflection_journal
+  examples: |
+    - What is a reflection journal?
+    - reflection journal
+- intent: DLA
+  examples: |
+    - What is a Deep Learning Activity?
+    - What is a DLA?
+    - DLA?
+    - DLA
+    - Deep Learning Activity
+- intent: seminar
+  examples: |
+    - What is seminar?
+    - seminar
+    - seminar?
+- intent: volunteer
+  examples: |
+    - What is a volunteer log?
+    - volunteering
+    - what is outreach?
+    - outreach
+- intent: jobs_package
+  examples: |
+    - What is the jobs package?
+    - cover letter
+    - resume
+    - mock interview
+    - jobs package
+- intent: technical_presentation
+  examples: |
+    - What is the technical presentation?
+    - technical presentation
+- intent: yellow_sheets
+  examples: |
+    - What is the yellow sheets?
+    - yellow sheet
+    - team leader evaluation
+    - performance review
+- intent: FDD
+  examples: |
+    - What is the FDD?
+    - What is the FDR?
+    - What is the Final Design Document?
+    - Final Design Document
+    - Final Design Report
+    - What is the Final Design Report?
+- intent: team_contract
+  examples: |
+    - What is the team contract?
+    - team contract?
+- intent: deliverables_specs
+  examples: |
+    - What is the deliverables and specs draft?
+    - what drafts exist?
+    - specs draft?
+    - what is deliverables?
+    - deliverables and specs draft
+    - what about the deliverables and specs draft?
+- intent: SOW
+  examples: |
+    - What is the scope of work?
+    - Scope of Work
+    - SOW
+    - What is the SOW?
+- intent: background_presentation
+  examples: |
+    - What is the background presentation?
+    - background presentation
+- intent: poster_presentation
+  examples: |
+    - What is the poster presentation?
+    - poster presentation
+- intent: client_presentation
+  examples: |
+    - What is the client presentation?
+    - client presentation
+    - What is the final presentation?
+    - final presentation
