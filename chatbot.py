@@ -1,20 +1,20 @@
 import os
 
 import discord
-import firebase_admin
+# import firebase_admin
 from discord import app_commands
 from dotenv import load_dotenv
-from firebase_admin import credentials
-from firebase_admin import db
+# from firebase_admin import credentials
+# from firebase_admin import db
 
 from rasa_connection import curl_request
 
-# Load Discord Bot Token and Firebase key
+# Load Discord Bot Token
 load_dotenv()
 token = os.getenv('TOKEN')
-cred = credentials.Certificate('firebasekey.json')
-firebaseurl = {'databaseURL': os.getenv('firebaseurl')}
-databaseApp = firebase_admin.initialize_app(cred, firebaseurl)
+# cred = credentials.Certificate('firebasekey.json')
+# firebaseurl = {'databaseURL': os.getenv('firebaseurl')}
+# databaseApp = firebase_admin.initialize_app(cred, firebaseurl)
 
 # Set Discord default intents required for class definition
 intents = discord.Intents.default()
@@ -37,10 +37,11 @@ class MyClient(discord.Client):
         if message.author != self.user:
             # Use curl_request Function (located in rasa_connection.py)
             answers = curl_request(message.content, str(message.author))
-
-            # Insert all Response into one String, so we can return it into the Discord Channel
+            #debug print
+            #print(message.content, message.author)
+            # Insert all Responses into one String so we can return it into the Discord Channel
             end_response = " \n ".join((answers))
-
+            print(end_response)
             # Return the message in a Discord Channel
             return await message.channel.send(f'{message.author.mention} ' + end_response)
 
