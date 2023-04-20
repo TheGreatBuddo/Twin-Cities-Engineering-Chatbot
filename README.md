@@ -7,13 +7,13 @@ The program uses Python to develop Rasa, an open-source AI development platform 
 A chatbot can be connected to a discord bot following the steps.
 
 
-##Creating a Discord Bot
+## Creating a Discord Bot
 
 Visit https://discord.com/developers/applications to create a new application. Here you will create your discord bot.
 Follow online tutorials to adding your bot to your respective discord server.
 
 
-##Discord Bot Token
+## Discord Bot Token
 
 Generate a discord bot token. This token will be private and should be stored in a private space.
 
