@@ -38,6 +38,8 @@ If you want or need to use another Rasa Model, make sure to *NOT* delete or over
 Simply get into the Project Folder and use the following Commands and write a Message in any Channel (Dont forget to invite the Bot ;D):
 
 ```sh
+# If running for the first time, use python -m rasa train to train a new model
+# cd into model folder
 $ python3 chatbot.py # To start the Bot
 
 # Then open a new Terminal and go in the model/ Folder
