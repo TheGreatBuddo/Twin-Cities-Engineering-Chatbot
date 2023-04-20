@@ -25,6 +25,7 @@ intents:
 - technical_presentation
 - volunteer
 - yellow_sheets
+
 responses:
   utter_greet:
   - text: Hey! How are you?

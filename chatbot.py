@@ -1,9 +1,11 @@
 import os
 
 import discord
-# import firebase_admin
 from discord import app_commands
 from dotenv import load_dotenv
+
+# Imports to use google firebase if future development wants to user store data
+# import firebase_admin
 # from firebase_admin import credentials
 # from firebase_admin import db
 
@@ -12,6 +14,9 @@ from rasa_connection import curl_request
 # Load Discord Bot Token
 load_dotenv()
 token = os.getenv('TOKEN')
+
+#Currently commented out code to use google firebase as a database.
+#Can be used in the future to store information from users.
 # cred = credentials.Certificate('firebasekey.json')
 # firebaseurl = {'databaseURL': os.getenv('firebaseurl')}
 # databaseApp = firebase_admin.initialize_app(cred, firebaseurl)
@@ -50,6 +55,10 @@ client = MyClient()
 tree = app_commands.CommandTree(client)
 
 
+client.run(token)
+
+#Example code to create commands in discord
+
 # # Ping Pong slash command
 # @tree.command(name="ping", description="Pings the user", guild=discord.Object(id=discord_guild_id))
 # async def self(interaction: discord.Interaction):
@@ -66,15 +75,10 @@ tree = app_commands.CommandTree(client)
 #         user: {"Goal": goal}
 #     })
 #     await interaction.response.send_message(f"Your goal \"{goal}\" has been stored in firebase ")
-#
-# # inform the user the bot will check in with them for their status
-# # Allow user to check off the goal
-#
-# # To_do list
-# # Allow user to type deadline
-# # allow bot to remind user in response to deadline
-# # allow user to retype deadline after answering a storyline prompt through rasa explaining the ins and outs.
-#
+
+
+# Beginning code to use firebase as a database
+
 # @tree.command(name="complete", description="User to erase a goal", guild=discord.Object(id=discord_guild_id))
 # async def self(interaction: discord.Interaction):
 #     user = interaction.user.name
@@ -86,6 +90,3 @@ tree = app_commands.CommandTree(client)
 #     # Update the database with user defined goal
 #     #ref.child(goal).delete()
 #     #await interaction.response.send_message(f"Your goal \"{goal}\" has been stored in firebase ")
-
-
-client.run(token)
